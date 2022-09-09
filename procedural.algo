@@ -1,28 +1,44 @@
-PROCEDURE dot_product(VAR x,y: ARRAY_OF FLOAT[2])
+PROCEDURE dot_product(VAR x, VAR y: ARRAY_OF FLOAT,dot:INTEGER)
 VAR
-    sum,i:INTEGER:=0;
+    i:INTEGER:=0;
 
 BEGIN
-    FOR i FROM 0 TO 1 STEP 1  DO
-        sum:=x[i]*y[i]+sum;
-    END_FOR
+    IF (v1.length<>v2.length) THEN
+        Write("victores are diffrent in size")
+    END_IF
+    WHILE (i<v1.length) DO
+        dot:=x[i]*y[i]+dot;
+        i++
+    END_WHILE 
     write(sum);
+
+END
+ALGORITHM Dot product
+VAR
+    v1,v2: ARRAY_OF INTEGER;
+    i:INTEGER:=0;
+BEGIN
+    read(v1);
+    read(v2);
+    dot_product(v1,v2,dot);
     IF (sum=0) THEN;
         write("v1 and v2 are two orthogonal vectors");
     END_IF
 END
-ALGORITHM Dot product
+FUNCTION dot_product_function(v1,v2:ARRAY_OF INTEGER) :INTEGER
 VAR
-    v1,v2: ARRAY_OF INTEGER[2];
-    i:INTEGER:=0;
+    dot:INTEGER=0
+    i:INTEGER=0
 BEGIN
-    FOR i FROM 0 TO 1 STEP 1  DO
-        write("v1["i"]");
-        read(v1[i]);
-        write("v2["i"]");
-        read(v2[i]);
-    END_FOR
-    dot_product(v1,v2);
-    write(v1,v2)
-
+     IF (v1.length<>v2.length) THEN
+        Write("victores are diffrent in size")
+    END_IF
+    WHILE (i<v1.length) DO
+        dot:=dot+v1[i]v2[i]
+        i++
+    END_WHILE
+     IF (dot=0) THEN
+        Write("v1 and v2 are orth")
+    END_IF
+    return dot
 END
