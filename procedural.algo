@@ -1,0 +1,12 @@
+PROCEDURE dot_product(VAR v1,v2: ARRAY_OF FLOAT[2])
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
+ALGORITHM Dot product
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
